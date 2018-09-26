@@ -16,7 +16,7 @@ def translator():
 	tr_words = []
 	for word in words:
 		wrd = word.lower()
-		if word in e2odictionary:
+		if wrd in e2odictionary:
 			tr_words.append(e2odictionary[wrd])
 		else:
 			tr_words.append("**")
@@ -26,4 +26,3 @@ def translator():
 
 if __name__ == '__main__':
 	app.run()
-
