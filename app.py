@@ -16,7 +16,7 @@ def translator():
 	tr_words = []
 	for word in words:
 		if word in e2odictionary:
-			tr_words.append(e2odictionary[word])
+			tr_words.append(e2odictionary[word.lower()])
 		else:
 			tr_words.append("**")
 	result = " ".join(tr_words)
