@@ -12,6 +12,36 @@
 		<link rel="stylesheet" href="../static/css/main.css" />
 		<link rel="shortcut icon" type="image/png" href="../static/images/logo.png"/>
 		<noscript><link rel="stylesheet" href="../static/css/noscript.css" /></noscript>
+		    <script type="text/javascript" src="https://www.google.com/jsapi">
+    </script>
+    <script type="text/javascript">
+
+      // Load the Google Transliterate API
+      google.load("elements", "1", {
+            packages: "transliteration"
+          });
+
+      function onLoad() {
+        var options = {
+            sourceLanguage:
+                google.elements.transliteration.LanguageCode.ENGLISH,
+            destinationLanguage:
+                [google.elements.transliteration.LanguageCode.ORIYA],
+            shortcutKey: 'ctrl+g',
+            transliterationEnabled: true
+        };
+
+        // Create an instance on TransliterationControl with the required
+        // options.
+        var control =
+            new google.elements.transliteration.TransliterationControl(options);
+
+        // Enable transliteration in the textbox with id
+        // 'transliterateTextarea'.
+        control.makeTransliteratable(['transliterateTextarea']);
+      }
+      google.setOnLoadCallback(onLoad);
+    </script>
 	</head>
 	<body class="is-preload">
 
@@ -28,8 +58,8 @@
 							</div>
 						</div>
 					</header>
-					<input type = "text" id = "inputText" value = "Type here" />
-					<input type = "text" id = "inputText" value = "{{translation}}" />
+					<input type = "text" id = "inputText" placeholder = "Type here" />
+					<input type = "text" id="transliterateTextarea" placeholder = "ଏହି ସ୍ଥାନରେ ଲେଖନ୍ତୁ" />
 				
 				<!-- Footer -->
 					<footer id="footer">
